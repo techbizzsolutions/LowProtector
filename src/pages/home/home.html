@@ -1,0 +1,49 @@
+<ion-header>
+    <ion-navbar color="primary">
+        <ion-title>
+            Law Protectors
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <h5>Registration</h5>
+
+    <ion-item>
+        <ion-label>Select Region</ion-label>
+        <ion-select interface="popover" [(ngModel)]="region">
+            <ion-option value="Pune">Pune</ion-option>
+            <ion-option value="Nagpur">Nagpur</ion-option>
+        </ion-select>
+    </ion-item>
+    <form [formGroup]="register" (ngSubmit)="logForm()">
+        <ion-item>
+            <ion-label floating>Name</ion-label>
+            <ion-input type="text" formControlName="Name"></ion-input>
+        </ion-item>
+        <div padding-horizontal>
+            <div class="alert" *ngIf="!register.controls['Name'].valid && register.controls['Name'].touched">Please Enter a name</div>
+        </div>
+        <ion-item>
+            <ion-label floating>Email</ion-label>
+            <ion-input type="email" formControlName="Email"></ion-input>
+        </ion-item>
+        <div padding-horizontal>
+            <div class="alert" *ngIf="!register.controls['Email'].valid && register.controls['Email'].touched">Please Enter a valid mail id</div>
+        </div>
+        <ion-item>
+            <ion-label floating>Mobile Number</ion-label>
+            <ion-input type="number" formControlName="Mobile"></ion-input>
+        </ion-item>
+        <div padding-horizontal>
+            <div class="alert" *ngIf="!register.controls['Mobile'].valid && register.controls['Mobile'].touched">Please Enter a mobile number</div>
+        </div>
+        <!-- Float the icon right -->
+        <div class="button_div">
+            <button ion-button [disabled]="!register.valid" block icon-right>
+                Register
+            <ion-icon name="log-in"></ion-icon>
+          </button>
+        </div>
+    </form>
+</ion-content>

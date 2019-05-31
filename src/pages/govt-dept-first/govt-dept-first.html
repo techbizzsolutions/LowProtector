@@ -1,0 +1,95 @@
+<ion-header>
+    <ion-navbar color="primary">
+        <ion-title>
+            Law Protectors
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <h5>Govt. Dept Part 1</h5>
+    <form [formGroup]="applicant">
+        <ion-item>
+            <ion-label floating>Full Name of Director /Authorised Signatory</ion-label>
+            <ion-input type="text" formControlName="Name"></ion-input>
+        </ion-item>
+        <div padding-horizontal>
+            <div class="alert" *ngIf="!applicant.controls['Name'].valid && applicant.controls['Name'].touched">Enter Full Name of Director /Authorised Signatory</div>
+        </div>
+        <ion-item>
+            <ion-label floating>Nationality of Chairman</ion-label>
+            <ion-input type="text" formControlName="Nationality"></ion-input>
+        </ion-item>
+        <div padding-horizontal>
+            <div class="alert" *ngIf="!applicant.controls['Nationality'].valid && applicant.controls['Nationality'].touched">Enter Nationality of Chairman</div>
+        </div>
+        <ion-item>
+            <ion-label floating>Association of Chairman Full name </ion-label>
+            <ion-input type="text" formControlName="Association"></ion-input>
+        </ion-item>
+        <div padding-horizontal>
+            <div class="alert" *ngIf="!applicant.controls['Association'].valid && applicant.controls['Association'].touched">Enter Association of Chairman Full name</div>
+        </div>
+        <ion-item>
+            <ion-label floating>Residential Address of Chairman</ion-label>
+            <ion-input type="text" formControlName="Address"></ion-input>
+        </ion-item>
+        <div padding-horizontal>
+            <div class="alert" *ngIf="!applicant.controls['Address'].valid && applicant.controls['Address'].touched">Enter Residential Address of Chairman</div>
+        </div>
+        <ion-item>
+            <ion-label floating>Firm Address</ion-label>
+            <ion-input type="text" formControlName="FirmAddress"></ion-input>
+        </ion-item>
+        <div padding-horizontal>
+            <div class="alert" *ngIf="!applicant.controls['FirmAddress'].valid && applicant.controls['FirmAddress'].touched">Enter Firm Address</div>
+        </div>
+        <ion-item>
+                <ion-label floating>Organization Name</ion-label>
+                <ion-input type="text" formControlName="Organization"></ion-input>
+            </ion-item>
+            <div padding-horizontal>
+                <div class="alert" *ngIf="!applicant.controls['Organization'].valid && applicant.controls['Organization'].touched">Enter Organization Name</div>
+            </div>
+        <ion-item>
+            <ion-label floating>Age</ion-label>
+            <ion-input type="tel" maxlength="3" formControlName="Age"></ion-input>
+        </ion-item>
+        <div padding-horizontal>
+            <div class="alert" *ngIf="!applicant.controls['Age'].valid && applicant.controls['Age'].touched">Please Enter Age</div>
+        </div>
+        <ion-item-group>
+            <ion-item-divider color="light">
+                Category of mark
+            </ion-item-divider>
+            <ion-item *ngFor="let item of mark;">
+                <ion-label>{{item.title}}</ion-label>
+                <ion-checkbox [(ngModel)]="item.selected" [ngModelOptions]="{standalone: true}"></ion-checkbox>
+            </ion-item>
+        </ion-item-group>
+
+        <ion-item>
+            <ion-label floating>Mark Brand Name to be resgistered</ion-label>
+            <ion-input type="text" formControlName="Brand"></ion-input>
+        </ion-item>
+        <div padding-horizontal>
+            <div class="alert" *ngIf="!applicant.controls['Brand'].valid && applicant.controls['Brand'].touched">Enter Mark Brand Name to be resgistered</div>
+        </div>
+        <ion-item>
+            <ion-label floating>Significance of the Mark</ion-label>
+            <ion-input type="text" formControlName="Significance"></ion-input>
+        </ion-item>
+        <div padding-horizontal>
+            <div class="alert" *ngIf="!applicant.controls['Significance'].valid && applicant.controls['Significance'].touched">Enter Significance of the Mark</div>
+        </div>
+
+        <!-- Float the icon right -->
+        <div class="button_div">
+            <button ion-button block (click)="applicantForm()" [disabled]="!applicant.valid" icon-right>
+                        Next
+                     <ion-icon name="md-arrow-round-forward"></ion-icon>
+            </button>
+        </div>
+    </form>
+
+</ion-content>

@@ -1,0 +1,34 @@
+<ion-header>
+    <ion-navbar color="primary">
+        <ion-title>
+            Law Protectors
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <h5>Select Form of a Organization</h5>
+    <ion-item>
+        <ion-label>Form Name</ion-label>
+        <ion-select interface="popover" [(ngModel)]="formName">
+            <ion-option value="Applicant">Applicant</ion-option>
+            <ion-option value="GovtDept">Govt. Department</ion-option>
+            <ion-option value="HUF">H.U.F.</ion-option>
+            <ion-option value="LLP">L.L.P.</ion-option>
+            <ion-option value="Proprietorship">Proprietorship</ion-option>
+            <ion-option value="Registered">Registered Company</ion-option>
+            <ion-option value="RegisteredPartnership">Registered Partnership</ion-option>
+            <ion-option value="Society">Society</ion-option>
+            <ion-option value="Trust">Trust</ion-option>
+            <!-- <ion-option value="Unregistered">Unregistered Company</ion-option> -->
+            <ion-option value="UnregisteredPartnership">Unregistered Partnership</ion-option>
+        </ion-select>
+    </ion-item>
+    <!-- Float the icon right -->
+    <div class="button_div">
+        <button ion-button (click)="next()" block icon-right>
+           Next
+        <ion-icon name="md-arrow-round-forward"></ion-icon>
+      </button>
+    </div>
+</ion-content>

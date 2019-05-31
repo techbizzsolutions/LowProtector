@@ -1,0 +1,57 @@
+<ion-header>
+    <ion-navbar color="primary">
+        <ion-title>
+            Law Protectors
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <h5>Other</h5>
+    <form [formGroup]="applicant">
+        <ion-item>
+            <ion-label floating>Name of Organization/Applicant</ion-label>
+            <ion-input type="text" formControlName="Name"></ion-input>
+        </ion-item>
+        <div padding-horizontal>
+            <div class="alert" *ngIf="!applicant.controls['Name'].valid && applicant.controls['Name'].touched">Enter Name of Organization/Applicant</div>
+        </div>
+        <ion-item>
+            <ion-label floating>Regd Address of Organization/Applicant</ion-label>
+            <ion-input type="text" formControlName="addOrganization"></ion-input>
+        </ion-item>
+        <div padding-horizontal>
+            <div class="alert" *ngIf="!applicant.controls['addOrganization'].valid && applicant.controls['addOrganization'].touched">Enter Regd Address of Organization/Applicant</div>
+        </div>
+        <ion-item>
+            <ion-label floating>Regd Address of Applicant</ion-label>
+            <ion-input type="text" formControlName="Address"></ion-input>
+        </ion-item>
+        <div padding-horizontal>
+            <div class="alert" *ngIf="!applicant.controls['Address'].valid && applicant.controls['Address'].touched">Enter Regd Address of Applicant</div>
+        </div>
+        <ion-item-group>
+            <ion-item-divider color="light">
+                Type of Work
+            </ion-item-divider>
+            <ion-item *ngFor="let item of work;">
+                <ion-label>{{item.title}}</ion-label>
+                <ion-checkbox [(ngModel)]="item.selected" [ngModelOptions]="{standalone: true}"></ion-checkbox>
+            </ion-item>
+        </ion-item-group>
+        <ion-item>
+            <ion-textarea placeholder="Enter your Requirement Details" rows="4" formControlName="Detail"></ion-textarea>
+        </ion-item>
+        <div padding-horizontal>
+            <div class="alert" *ngIf="!applicant.controls['Detail'].valid && applicant.controls['Detail'].touched">Enter your Requirement Details</div>
+        </div>
+        <!-- Float the icon right -->
+        <div class="button_div">
+            <button ion-button block (click)="applicantForm()" [disabled]="!applicant.valid" icon-right>
+                        Next
+                     <ion-icon name="md-arrow-round-forward"></ion-icon>
+            </button>
+        </div>
+    </form>
+
+</ion-content>

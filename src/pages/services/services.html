@@ -1,0 +1,27 @@
+<ion-header>
+    <ion-navbar color="primary">
+        <ion-title>
+            Law Protectors
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <h5>Select Type of Services</h5>
+    <ion-item>
+        <ion-label>Service</ion-label>
+        <ion-select interface="popover" [(ngModel)]="service">
+            <ion-option value="TM">TM</ion-option>
+            <ion-option value="CR">CR</ion-option>
+            <ion-option value="Other">Other</ion-option>
+            <ion-option value="Balance Payment">Balance Payment</ion-option>            
+        </ion-select>
+    </ion-item>
+    <!-- Float the icon right -->
+    <div class="button_div">
+        <button ion-button (click)="next()" block icon-right>
+           Next
+        <ion-icon name="md-arrow-round-forward"></ion-icon>
+      </button>
+    </div>
+</ion-content>

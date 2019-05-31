@@ -1,0 +1,92 @@
+<ion-header>
+    <ion-navbar color="primary">
+        <ion-title>
+            Law Protectors
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+    <h5>CR Part 2</h5>
+    <form [formGroup]="applicant">
+        <ion-item-group>
+            <ion-item-divider color="light">
+                All rights should be given to
+            </ion-item-divider>
+            <ion-item *ngFor="let item of right;">
+                <ion-label>{{item.title}}</ion-label>
+                <ion-checkbox [(ngModel)]="item.selected" [ngModelOptions]="{standalone: true}"></ion-checkbox>
+            </ion-item>
+        </ion-item-group>
+        <ion-item-group>
+            <ion-item-divider color="light">
+                Providing the above in the form of
+            </ion-item-divider>
+            <ion-item *ngFor="let item of form;">
+                <ion-label>{{item.title}}</ion-label>
+                <ion-checkbox [(ngModel)]="item.selected" [ngModelOptions]="{standalone: true}"></ion-checkbox>
+            </ion-item>
+        </ion-item-group>
+        <ion-item>
+            <ion-label floating>Age</ion-label>
+            <ion-input type="tel" maxlength="3" formControlName="Age"></ion-input>
+        </ion-item>
+        <div padding-horizontal>
+            <div class="alert" *ngIf="!applicant.controls['Age'].valid && applicant.controls['Age'].touched">Please Enter Age</div>
+        </div>
+        <ion-item>
+            <ion-textarea placeholder="Name, Residential Address & Ddsignations of all Persons involved in Development/Writing of the above" rows="5" formControlName="Detail"></ion-textarea>
+        </ion-item>
+        <div padding-horizontal>
+            <div class="alert" *ngIf="!applicant.controls['Detail'].valid && applicant.controls['Detail'].touched">Enter details</div>
+        </div>
+        <ion-item>
+            <ion-label floating>Language of the Work</ion-label>
+            <ion-input type="text" formControlName="Language"></ion-input>
+        </ion-item>
+        <div padding-horizontal>
+            <div class="alert" *ngIf="!applicant.controls['Language'].valid && applicant.controls['Language'].touched">Enter Language of the Work</div>
+        </div>
+        <ion-item (click)="opencal('publish')">
+            <ion-label>Date of Publication <span style="float: right;"> {{ publishdate }}</span></ion-label>
+        </ion-item>
+        <ion-item>
+            <ion-label floating>Name of Countries in which it is Published</ion-label>
+            <ion-input type="text" formControlName="Countries"></ion-input>
+        </ion-item>
+        <div padding-horizontal>
+            <div class="alert" *ngIf="!applicant.controls['Countries'].valid && applicant.controls['Countries'].touched">Enter Name of Countries in which it is Published</div>
+        </div>
+        <ion-list radio-group formControlName="Copies">
+            <ion-item-divider color="light">
+                Enclose 5 Copies of the subject Matter of Copyright:
+            </ion-item-divider>
+            <ion-item>
+                <ion-label>Yes</ion-label>
+                <ion-radio value="yes"></ion-radio>
+            </ion-item>
+            <ion-item>
+                <ion-label>No</ion-label>
+                <ion-radio value="no"></ion-radio>
+            </ion-item>
+        </ion-list>
+        <ion-item (click)="opencal('date')">
+            <ion-label>Date <span style="float: right;"> {{ datetoday }}</span></ion-label>
+        </ion-item>
+        <ion-item>
+            <ion-label floating>Place</ion-label>
+            <ion-input type="text" formControlName="Place"></ion-input>
+        </ion-item>
+        <div padding-horizontal>
+            <div class="alert" *ngIf="!applicant.controls['Place'].valid && applicant.controls['Place'].touched">Enter Place</div>
+        </div>
+        <!-- Float the icon right -->
+        <div class="button_div">
+            <button ion-button block (click)="applicantForm()" [disabled]="!applicant.valid" icon-right>
+                    Next
+                    <ion-icon name="md-arrow-round-forward"></ion-icon>
+              </button>
+        </div>
+    </form>
+</ion-content>

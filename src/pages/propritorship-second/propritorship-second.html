@@ -1,0 +1,67 @@
+<ion-header>
+    <ion-navbar color="primary">
+        <ion-title>
+            Law Protectors
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <h5>Proprietorship Part 2</h5>
+    <form [formGroup]="applicant">
+        <ion-item>
+            <ion-label floating>TM Class</ion-label>
+            <ion-input type="text" formControlName="TM"></ion-input>
+        </ion-item>
+        <div padding-horizontal>
+            <div class="alert" *ngIf="!applicant.controls['TM'].valid && applicant.controls['TM'].touched">Enter TM Class</div>
+        </div>
+        <ion-item>
+            <ion-label floating>Goods/Services Details</ion-label>
+            <ion-input type="text" formControlName="Services"></ion-input>
+        </ion-item>
+        <div padding-horizontal>
+            <div class="alert" *ngIf="!applicant.controls['Services'].valid && applicant.controls['Services'].touched">Enter Goods/Services Details</div>
+        </div>
+        <ion-item-group>
+            <ion-item-divider color="light">
+                Trade Description
+            </ion-item-divider>
+            <ion-item *ngFor="let item of Trade;">
+                <ion-label>{{item.title}}</ion-label>
+                <ion-checkbox [(ngModel)]="item.selected" [ngModelOptions]="{standalone: true}"></ion-checkbox>
+            </ion-item>
+        </ion-item-group>
+        <ion-item>
+            <ion-label floating>User date proposed to be used</ion-label>
+            <ion-input type="text" formControlName="proposed"></ion-input>
+        </ion-item>
+        <div padding-horizontal>
+            <div class="alert" *ngIf="!applicant.controls['proposed'].valid && applicant.controls['proposed'].touched">Enter User date proposed to be used</div>
+        </div>
+        <ion-item>
+            <ion-label floating>Information Provide name</ion-label>
+            <ion-input type="text" formControlName="Information"></ion-input>
+        </ion-item>
+        <div padding-horizontal>
+            <div class="alert" *ngIf="!applicant.controls['Information'].valid && applicant.controls['Information'].touched">Enter Information Provide name</div>
+        </div>
+        <ion-item (click)="opencal()">
+            <ion-label>Date <span style="float: right;"> {{ dobdate }}</span></ion-label>
+        </ion-item>
+        <ion-item>
+            <ion-label floating>Place</ion-label>
+            <ion-input type="text" formControlName="Place"></ion-input>
+        </ion-item>
+        <div padding-horizontal>
+            <div class="alert" *ngIf="!applicant.controls['Place'].valid && applicant.controls['Place'].touched">Enter Place</div>
+        </div>
+        <div class="button_div">
+            <button ion-button block (click)="applicantForm()" [disabled]="!applicant.valid" icon-right>
+                    Next
+                    <ion-icon name="md-arrow-round-forward"></ion-icon>
+                </button>
+        </div>
+    </form>
+
+</ion-content>

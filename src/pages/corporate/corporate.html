@@ -1,0 +1,89 @@
+<ion-header>
+    <ion-navbar color="primary">
+        <ion-title>
+            Law Protectors
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <h5>CR Part 1</h5>
+    <form [formGroup]="applicant">
+        <ion-item>
+            <ion-label floating>Title of Copyright</ion-label>
+            <ion-input type="text" formControlName="Title"></ion-input>
+        </ion-item>
+        <div padding-horizontal>
+            <div class="alert" *ngIf="!applicant.controls['Title'].valid && applicant.controls['Title'].touched">Enter Title of Copyright</div>
+        </div>
+        <ion-item>
+            <ion-label floating>Name of the Organization/Applicant</ion-label>
+            <ion-input type="text" formControlName="NameOrganization"></ion-input>
+        </ion-item>
+        <div padding-horizontal>
+            <div class="alert" *ngIf="!applicant.controls['NameOrganization'].valid && applicant.controls['NameOrganization'].touched">Enter Name of the Organization/Applicant</div>
+        </div>
+        <ion-item>
+            <ion-label floating>Regd Address of Organization/Applicant</ion-label>
+            <ion-input type="text" formControlName="AddressOrg"></ion-input>
+        </ion-item>
+        <div padding-horizontal>
+            <div class="alert" *ngIf="!applicant.controls['AddressOrg'].valid && applicant.controls['AddressOrg'].touched">Enter Regd Address of Organization/Applicant</div>
+        </div>
+        <ion-item>
+            <ion-label floating>Regd Address of Applicant</ion-label>
+            <ion-input type="text" formControlName="Address"></ion-input>
+        </ion-item>
+        <div padding-horizontal>
+            <div class="alert" *ngIf="!applicant.controls['Address'].valid && applicant.controls['Address'].touched">Enter Regd Address of Applicant</div>
+        </div>
+        <ion-item>
+            <ion-label>Select Form of Oorganization</ion-label>
+            <ion-select interface="popover" formControlName="formName">
+                <ion-option value="Applicant">Applicant</ion-option>
+                <ion-option value="GovtDept">Govt. Department</ion-option>
+                <ion-option value="HUF">H.U.F.</ion-option>
+                <ion-option value="LLP">L.L.P.</ion-option>
+                <ion-option value="Proprietorship">Proprietorship</ion-option>
+                <ion-option value="Registered">Registered Company</ion-option>
+                <ion-option value="RegisteredPartnership">Registered Partnership</ion-option>
+                <ion-option value="Society">Society</ion-option>
+                <ion-option value="Trust">Trust</ion-option>
+                <ion-option value="Unregistered">Unregistered Company</ion-option>
+                <ion-option value="UnregisteredPartnership">Unregistered Partnership</ion-option>
+            </ion-select>
+        </ion-item>
+        <ion-item>
+            <ion-label floating>Full Name of the Propritor/Applicant</ion-label>
+            <ion-input type="text" formControlName="Propritor"></ion-input>
+        </ion-item>
+        <div padding-horizontal>
+            <div class="alert" *ngIf="!applicant.controls['Propritor'].valid && applicant.controls['Propritor'].touched">Enter Full Name of the Propritor/Applicant</div>
+        </div>
+        <ion-item>
+            <ion-label floating>Nationality of the Authorised Signatory</ion-label>
+            <ion-input type="text" formControlName="Nationality"></ion-input>
+        </ion-item>
+        <div padding-horizontal>
+            <div class="alert" *ngIf="!applicant.controls['Nationality'].valid && applicant.controls['Nationality'].touched">Enter Nationality of the Authorised Signatory</div>
+        </div>
+        <ion-item-group>
+            <ion-item-divider color="light">
+                Nature of Work
+            </ion-item-divider>
+            <ion-item *ngFor="let item of mark;">
+                <ion-label>{{item.title}}</ion-label>
+                <ion-checkbox [(ngModel)]="item.selected" [ngModelOptions]="{standalone: true}"></ion-checkbox>
+            </ion-item>
+        </ion-item-group>
+
+        <!-- Float the icon right -->
+        <div class="button_div">
+            <button ion-button block (click)="applicantForm()" [disabled]="!applicant.valid" icon-right>
+                        Next
+                     <ion-icon name="md-arrow-round-forward"></ion-icon>
+            </button>
+        </div>
+    </form>
+
+</ion-content>

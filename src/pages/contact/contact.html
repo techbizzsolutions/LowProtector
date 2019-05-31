@@ -1,0 +1,40 @@
+<ion-header>
+    <ion-navbar color="primary">
+        <ion-title>
+            Law Protectors
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+        <h5>Get in touch with us</h5>        
+    <div  *ngIf="ispune">
+            <p><span>Pune (Head Office) : </span> 17, Agarwal Rd, Somwar Peth, Pune, Maharashtra 411011</p>
+            <p>Tel No: (020) 26051325/3325/9575/95762 <br>+91 9371804076, 9372274078</p>
+            <p>Email: <a href="mailto:lpinfo@iprlawprotectors.com">lawprotectors.nagpur@gmail.com</a></p>    
+            <hr>
+    </div>
+<div *ngIf="!ispune">
+        <p><span>Nagpur Office : </span> 4, Indraprastha Appt. 2nd Floor, 2nd Street, Behind Silver Palace, Dhantoli, Nagpur-12</p>
+        <p>Tel No: 0712-6668333, 2461562, 02440159, 2450046, 2450047, 3291616. <br>+91 9158277666</p>
+        <p>Email: <a href="mailto:lawprotectors.nagpur@gmail.com">lawprotectors.nagpur@gmail.com</a></p>
+        <hr>
+</div>
+
+    <p>Website: <a href="http://iprlawprotectors.com/">http://iprlawprotectors.com/</a></p>
+    <div class="button_div">
+        <ion-row>
+            <ion-col col-6>
+                <button ion-button icon-right block (click)="logout()">
+                      Logout
+                    <ion-icon name="log-out"></ion-icon>
+                </button>
+            </ion-col>
+            <ion-col col-6>
+                <button ion-button (click)="share()" block icon-right>
+                   Share App
+              </button>
+            </ion-col>
+        </ion-row>
+    </div>
+</ion-content>

@@ -1,0 +1,109 @@
+<ion-header>
+    <ion-navbar color="primary">
+        <ion-title>
+            Law Protectors
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <h5>Payment</h5>
+    <form [formGroup]="payment" (ngSubmit)="logForm()">
+            <ion-item *ngIf="showORG">
+                    <ion-label floating>Organization Name</ion-label>
+                    <ion-input type="text" formControlName="Organization"></ion-input>
+                </ion-item>
+                <div *ngIf="showORG" padding-horizontal>
+                    <div class="alert" *ngIf="!payment.controls['Organization'].valid && payment.controls['Organization'].touched">Enter Organization Name</div>
+                </div>
+        <ion-item>
+            <ion-label floating>Contract final total amount</ion-label>
+            <ion-input type="number" formControlName="contractAmount"></ion-input>
+        </ion-item>
+        <div padding-horizontal>
+            <div class="alert" *ngIf="!payment.controls['contractAmount'].valid && payment.controls['contractAmount'].touched">Please Enter Contract final total amount</div>
+        </div>
+        <ion-item>
+            <ion-label floating>GST amount</ion-label>
+            <ion-input type="number" formControlName="gstAmount"></ion-input>
+        </ion-item>
+        <div padding-horizontal>
+            <div class="alert" *ngIf="!payment.controls['gstAmount'].valid && payment.controls['gstAmount'].touched">Please Enter GST amount</div>
+        </div>
+        <ion-item>
+            <ion-label floating>Total amount</ion-label>
+            <ion-input type="number" formControlName="totalAmount"></ion-input>
+        </ion-item>
+        <div padding-horizontal>
+            <div class="alert" *ngIf="!payment.controls['totalAmount'].valid && payment.controls['totalAmount'].touched">Please Enter Total amount</div>
+        </div>
+        <ion-item>
+            <ion-label floating>Recevied amount</ion-label>
+            <ion-input type="number" formControlName="receviedAmount"></ion-input>
+        </ion-item>
+        <div padding-horizontal>
+            <div class="alert" *ngIf="!payment.controls['receviedAmount'].valid && payment.controls['receviedAmount'].touched">Please Enter Recevied amount</div>
+        </div>
+        <ion-item>
+            <ion-label floating>Balance amount</ion-label>
+            <ion-input type="number" formControlName="balanceAmount"></ion-input>
+        </ion-item>
+        <div padding-horizontal>
+            <div class="alert" *ngIf="!payment.controls['balanceAmount'].valid && payment.controls['balanceAmount'].touched">Please Enter Balance amount</div>
+        </div>
+        <ion-item>
+            <ion-label floating>GST number</ion-label>
+            <ion-input type="text" formControlName="gstnumber"></ion-input>
+        </ion-item>
+        <div padding-horizontal>
+            <div class="alert" *ngIf="!payment.controls['gstnumber'].valid && payment.controls['gstnumber'].touched">Please Enter GST number</div>
+        </div>
+        <ion-item-group>
+            <ion-item-divider color="light">
+                Payment Mode
+            </ion-item-divider>
+            <ion-row>
+                <ion-col col-6 *ngFor="let item of paymentMode;">
+                    <ion-item>
+                        <ion-label>{{item.title}}</ion-label>
+                        <ion-checkbox [(ngModel)]="item.selected" [ngModelOptions]="{standalone: true}"></ion-checkbox>
+                    </ion-item>
+                </ion-col>
+            </ion-row>
+        </ion-item-group>
+        <ion-item-group>
+            <ion-item-divider color="light">
+                Enter cheque details here
+            </ion-item-divider>
+            <ion-row>
+                <ion-col col-6>
+                    <ion-item>
+                        <ion-input type="text" placeholder="Cheque number" formControlName="chequenumber"></ion-input>
+                    </ion-item>
+                </ion-col>
+                <ion-col col-6>
+                    <ion-item>
+                        <ion-input type="text" placeholder="Bank name" formControlName="bankname"></ion-input>
+                    </ion-item>
+                </ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col col-6>
+                    <ion-item (click)="opencal()">
+                        <ion-label>{{ chqdate }}</ion-label>
+                    </ion-item>
+                </ion-col>
+                <ion-col col-6>
+                    <ion-item>
+                        <ion-input type="number" placeholder="Cheque amount" formControlName="chequeamount"></ion-input>
+                    </ion-item>
+                </ion-col>
+            </ion-row>
+        </ion-item-group>
+        <div class="button_div">
+            <button ion-button [disabled]="!payment.valid" block icon-right>
+              Submit
+        </button>
+        </div>
+    </form>
+</ion-content>
