@@ -145,7 +145,7 @@ export class PaymentPage {
     }
 
     this.data = rowdata.join('\r\n');
-    //this.senddata( this.data);
+    console.log( this.data);
     this.share();
   }
 

@@ -37,14 +37,14 @@ export class RegisterPartnershipFirstPage {
   constructor(public navCtrl: NavController, private datePicker: DatePicker, public toastCtrl: ToastController, public navParams: NavParams,public formBuilder: FormBuilder) {
     this.applicant = this.formBuilder.group({
       Name: ['', Validators.required],
-      Nationality: ['',Validators.required],
-      Father : ['',Validators.required],
       Address : ['',Validators.required],
       Brand : ['',Validators.required],
       Significance : ['',Validators.required],
       Age: ['',Validators.required],
-      Organization : ['',Validators.required],      
-        FirmAddress:['',Validators.required]
+      Organization : ['',Validators.required],  
+      FirmAddress:['',Validators.required],
+      Nationality: ['',Validators.required],
+      Father : ['',Validators.required]
     });
   }
 

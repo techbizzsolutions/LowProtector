@@ -41,14 +41,14 @@ export class ApplicantFirstPage {
       {
     this.applicant = this.formBuilder.group({
       Name: ['', Validators.required],
-      Nationality: ['',Validators.required],
-      Father : ['',Validators.required],
       Address : ['',Validators.required],
       Brand : ['',Validators.required],
       Significance : ['',Validators.required],
+      Age:['',Validators.required],
       FirmAddress:['',Validators.required],
-      Organization : ['',Validators.required],      
-      Age:['',Validators.required]
+      Organization : ['',Validators.required], 
+      Nationality: ['',Validators.required],
+      Father : ['',Validators.required]
     });
   }
 
