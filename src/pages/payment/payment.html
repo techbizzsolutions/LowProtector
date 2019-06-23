@@ -73,6 +73,95 @@
         </ion-item-group>
         <ion-item-group>
             <ion-item-divider color="light">
+                Cash Details
+            </ion-item-divider>
+            <ion-row>
+                <ion-col col-6>
+                    <ion-item>
+                        <ion-label>Rs.2000 Notes</ion-label>
+                    </ion-item>
+                </ion-col>
+                <ion-col col-6>
+                    <ion-item>
+                        <ion-input type="number" placeholder="NO." formControlName="Rs.2000 Notes"></ion-input>
+                    </ion-item>
+                </ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col col-6>
+                    <ion-item>
+                        <ion-label>Rs.500 Notes</ion-label>
+                    </ion-item>
+                </ion-col>
+                <ion-col col-6>
+                    <ion-item>
+                        <ion-input type="number" placeholder="NO." formControlName="Rs.500 Notes"></ion-input>
+                    </ion-item>
+                </ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col col-6>
+                    <ion-item>
+                        <ion-label>Rs.200 Notes</ion-label>
+                    </ion-item>
+                </ion-col>
+                <ion-col col-6>
+                    <ion-item>
+                        <ion-input type="number" placeholder="NO." formControlName="Rs.200 Notes"></ion-input>
+                    </ion-item>
+                </ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col col-6>
+                    <ion-item>
+                        <ion-label>Rs.100 Notes</ion-label>
+                    </ion-item>
+                </ion-col>
+                <ion-col col-6>
+                    <ion-item>
+                        <ion-input type="number" placeholder="NO." formControlName="Rs.100 Notes"></ion-input>
+                    </ion-item>
+                </ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col col-6>
+                    <ion-item>
+                        <ion-label>Rs.50 Notes</ion-label>
+                    </ion-item>
+                </ion-col>
+                <ion-col col-6>
+                    <ion-item>
+                        <ion-input type="number" placeholder="NO." formControlName="Rs.50 Notes"></ion-input>
+                    </ion-item>
+                </ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col col-6>
+                    <ion-item>
+                        <ion-label>Rs.20 Notes</ion-label>
+                    </ion-item>
+                </ion-col>
+                <ion-col col-6>
+                    <ion-item>
+                        <ion-input type="number" placeholder="NO." formControlName="Rs.20 Notes"></ion-input>
+                    </ion-item>
+                </ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col col-6>
+                    <ion-item>
+                        <ion-label>Rs.10 Notes</ion-label>
+                    </ion-item>
+                </ion-col>
+                <ion-col col-6>
+                    <ion-item>
+                        <ion-input type="number" placeholder="NO." formControlName="Rs.10 Notes"></ion-input>
+                    </ion-item>
+                </ion-col>
+            </ion-row>
+        </ion-item-group>
+        <ion-item-group>
+            <ion-item-divider color="light">
                 Enter cheque details here
             </ion-item-divider>
             <ion-row>
@@ -100,6 +189,13 @@
                 </ion-col>
             </ion-row>
         </ion-item-group>
+        <ion-item>
+            <ion-label floating>Enter ground of contract</ion-label>
+            <ion-input type="text" formControlName="Ground of Contract"></ion-input>
+        </ion-item>
+        <div padding-horizontal>
+            <div class="alert" *ngIf="!payment.controls['Ground of Contract'].valid && payment.controls['Ground of Contract'].touched">Please Enter Ground of Contract</div>
+        </div>
         <div class="button_div">
             <button ion-button [disabled]="!payment.valid" block icon-right>
               Submit

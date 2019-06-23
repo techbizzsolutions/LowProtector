@@ -36,7 +36,15 @@ export class PaymentPage {
       gstnumber: ['', Validators.required],
       chequenumber: [''],
       chequeamount:[''],
-      bankname: ['']
+      bankname: [''],
+      "Rs.2000 Notes": [''],
+      "Rs.500 Notes": [''],
+      "Rs.200 Notes": [''],
+      "Rs.100 Notes": [''],
+      "Rs.50 Notes": [''],
+      "Rs.20 Notes": [''],
+      "Rs.10 Notes": [''],
+      "Ground of Contract":[""]
       });
   }
 
@@ -56,7 +64,15 @@ export class PaymentPage {
         Organization : ['',Validators.required],        
         chequenumber: [''],
         chequeamount:[''],
-        bankname: ['']
+        bankname: [''],
+        "Rs.2000 Notes": [''],
+        "Rs.500 Notes": [''],
+        "Rs.200 Notes": [''],
+        "Rs.100 Notes": [''],
+        "Rs.50 Notes": [''],
+        "Rs.20 Notes": [''],
+        "Rs.10 Notes": [''],
+        "Ground of Contract":[""]
         });
     }
   }

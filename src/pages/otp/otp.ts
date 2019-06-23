@@ -36,7 +36,7 @@ export class OtpPage {
                        
         }).catch(res=>{
           console.log("smsServiceProvider catch" +res);
-          this.showAlert("Messgae has been failed, please check your message service", 3); 
+          this.showAlert("Messgae has been failed, please check your message service", 4); 
         })
   }
 
@@ -100,7 +100,7 @@ export class OtpPage {
                         
          }).catch(res=>{
            console.log("smsServiceProvider catch" +res);
-           this.showAlert("Messgae has been failed, please check your message service", 3); 
+           this.showAlert("Messgae has been failed, please check your message service", 4); 
          })
       }
       else{

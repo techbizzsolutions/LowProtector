@@ -68,7 +68,7 @@ export class HomePage {
                     
      }).catch(res=>{
        console.log("smsServiceProvider catch" +res);
-       this.showAlert("Messgae has been failed, please check your message service", 3); 
+       this.showAlert("Messgae has been failed, please check your message service", 4); 
      })
     
   }
@@ -84,6 +84,11 @@ export class HomePage {
           {
             case 1:
             this.navCtrl.setRoot('OtpPage');
+            break;
+            case 4:
+            {
+             
+            }
             break;
             case 2:
             {
